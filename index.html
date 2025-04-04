@@ -10,27 +10,42 @@
     <header>
         <div class="top-bar">
             <div class="social-icons">
-        </div>
+                </div>
             <button class="participar">
-                <li><a href="cadastro.html">Quero participar</a></li>
+                <a href="cadastro.html">Quero participar</a>
             </button>
         </div>
 
-    <div class="inicio">  
+        <div class="inicio"> 
+            <div class="logo">
+                <img src="https://s2.glbimg.com/0PyNEASaB6QNF7Nh24OLeQaQWWk=/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2023/f/l/vwmrNzREmL0XgP1wgb7A/logo-elas-por-elas.png" alt="Logo Elas por Elas">
+            </div>
 
-        <div class="logo">
-            <img src="https://s2.glbimg.com/0PyNEASaB6QNF7Nh24OLeQaQWWk=/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2023/f/l/vwmrNzREmL0XgP1wgb7A/logo-elas-por-elas.png" alt="">
+            <div class="intro">
+                <h2>titulo introdução</h2>
+                <p>Introduzir o projeto</p>
+                <button class="saiba-mais">Saiba mais</button>
+            </div>
         </div>
 
-        <div class="intro">
-            <h2>titulo introdução</h2>
-            <p>Introduzir o projeto</p>
-            <button class="saiba-mais">Saiba mais</button>
-        </div>
+        <!--<nav class="mobile-nav">
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pesquisas.html">Pesquisas</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="curiosidades.html">Curiosidades</a></li>
+                <li><a href="forum.html">Fórum</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>-->
+        </nav>
 
-    </div>
-
-        <nav>
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="pesquisas.html">Pesquisas</a></li>
@@ -42,6 +57,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="objetivos">
             <h2>OBJETIVO</h2>
@@ -64,9 +80,17 @@
             </div>
         </section>
     </main>
+
     <script>
         document.querySelector(".saiba-mais").addEventListener("click", function() {
             alert("Saiba mais sobre o projeto!");
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('.menu-list');
+
+        menuToggle.addEventListener('click', () => {
+            menuList.classList.toggle('active');
         });
     </script>
 </body>
