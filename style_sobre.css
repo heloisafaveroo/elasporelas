@@ -1,0 +1,251 @@
+/* Estilos gerais do body */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão do texto para Arial ou uma fonte sans-serif caso Arial não esteja disponível. */
+    margin: 0; /* Remove as margens padrão do body, garantindo que o conteúdo comece nas bordas da janela. */
+    padding: 0; /* Remove o preenchimento padrão do body, evitando espaçamento interno desnecessário. */
+    background-color: #fce7e7; /* Define a cor de fundo do body como um tom de rosa claro (hexadecimal). */
+}
+
+/* Estilos da barra superior */
+.top-bar {
+    display: flex; /* Utiliza o modelo de layout Flexbox para organizar os elementos filhos em uma linha ou coluna. */
+    justify-content: space-between; /* Espaça os itens filhos ao longo da linha principal, com espaço igual entre eles e nas extremidades. */
+    padding: 10px 20px; /* Define o preenchimento interno: 10 pixels nas partes superior e inferior, e 20 pixels nas partes esquerda e direita. */
+    background-color: #6C2D2D; /* Define a cor de fundo da barra superior como um tom de vinho escuro (hexadecimal). */
+    color: white; /* Define a cor do texto dentro da barra superior como branco. */
+}
+
+/* Estilos do botão "Participar" */
+.participar {
+    background-color: white; /* Define a cor de fundo do botão como branco. */
+    border: none; /* Remove a borda padrão do botão. */
+    padding: 8px 12px; /* Define o preenchimento interno: 8 pixels nas partes superior e inferior, e 12 pixels nas partes esquerda e direita. */
+    cursor: pointer; /* Altera o cursor do mouse para uma mãozinha ao passar sobre o botão, indicando que é clicável. */
+    border-radius: 5px; /* Arredonda os cantos do botão com um raio de 5 pixels. */
+    list-style: none; /* Remove os estilos de lista (marcadores, etc.). Pode ser redundante aqui, pois o elemento provavelmente não é uma lista. */
+}
+
+/* Estilos do link dentro do botão "Participar" */
+.participar a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+    color: #000; /* Define a cor do texto do link como preto. */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #DE7F7F; /* Define a cor de fundo do cabeçalho como um tom de rosa mais escuro (hexadecimal). */
+}
+
+/* Estilos da barra de navegação */
+nav {
+    display: flex; /* Utiliza o modelo de layout Flexbox para organizar os elementos filhos (logo e menu) em uma linha ou coluna. */
+    justify-content: space-between; /* Espaça os itens filhos ao longo da linha principal, com o logo à esquerda e o menu à direita. */
+    align-items: center; /* Alinha verticalmente os itens filhos ao centro da barra de navegação. */
+    padding: 10px 20px; /* Define o preenchimento interno: 10 pixels nas partes superior e inferior, e 20 pixels nas partes esquerda e direita. */
+}
+
+/* Estilos do container do logo */
+.logo img {
+    width: 100%; /* Faz com que a largura da imagem do logo se ajuste ao container pai. */
+    max-width: 200px; /* Define a largura máxima da imagem do logo em 200 pixels, evitando que ela fique muito grande. */
+    height: auto; /* Mantém a proporção da altura da imagem ao ajustar a largura, evitando distorções. */
+}
+
+/* Estilos da lista do menu principal */
+.menu {
+    list-style: none; /* Remove os marcadores de lista padrão (bolinhas, números, etc.). */
+    padding: 0; /* Remove o preenchimento interno padrão da lista. */
+    margin: 0; /* Remove as margens padrão da lista. */
+    display: flex; /* Utiliza o modelo de layout Flexbox para dispor os itens da lista (links) horizontalmente. */
+}
+
+/* Estilos dos itens da lista do menu principal */
+.menu li {
+    margin-left: 20px; /* Define uma margem de 20 pixels à esquerda de cada item da lista, criando espaçamento entre os links. */
+}
+
+/* Estilos dos links dentro do menu principal */
+.menu a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+    color: white; /* Define a cor do texto dos links como branco. */
+    padding: 8px 12px; /* Define o preenchimento interno dos links: 8 pixels nas partes superior e inferior, e 12 pixels nas partes esquerda e direita, criando áreas clicáveis maiores. */
+    display: block; /* Faz com que o link se comporte como um elemento de bloco, ocupando toda a largura do item da lista e facilitando o clique. */
+    border-radius: 5px; /* Arredonda os cantos dos links com um raio de 5 pixels. */
+}
+
+/* Estilos dos links do menu principal ao passar o mouse */
+.menu a:hover {
+    background-color: #6C2D2D; /* Altera a cor de fundo do link para um tom de vinho escuro ao passar o mouse, fornecendo feedback visual. */
+}
+
+/* Estilos do ícone do menu hambúrguer (para dispositivos móveis) */
+.hamburger {
+    display: none; /* Inicialmente escondido em telas maiores. Será exibido em telas menores. */
+    flex-direction: column; /* Alinha as barras do hambúrguer verticalmente. */
+    cursor: pointer; /* Altera o cursor do mouse para uma mãozinha ao passar sobre o ícone, indicando que é clicável. */
+}
+
+/* Estilos das barras do menu hambúrguer */
+.bar {
+    width: 25px; /* Define a largura de cada barra do hambúrguer em 25 pixels. */
+    height: 3px; /* Define a altura de cada barra do hambúrguer em 3 pixels. */
+    background-color: white; /* Define a cor de fundo das barras como branco. */
+    margin: 3px 0; /* Define a margem superior e inferior de cada barra em 3 pixels, criando espaçamento entre elas. */
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave de 0.3 segundos para a propriedade 'background-color', com uma função de easing 'ease'. */
+}
+
+/* Estilos do menu móvel (inicialmente escondido) */
+.mobile-menu {
+    display: none; /* Inicialmente escondido. Será exibido quando o ícone do hambúrguer for clicado. */
+    position: absolute; /* Posiciona o elemento em relação ao seu ancestral posicionado mais próximo (ou ao body, se nenhum ancestral estiver posicionado). */
+    top: auto; /* Ajusta automaticamente a posição superior. Será recalculado quando a classe 'open' for adicionada. */
+    right: 20px; /* Define a distância da borda direita da janela em 20 pixels. */
+    background-color: #DE7F7F; /* Define a cor de fundo do menu móvel como um tom de rosa mais escuro. */
+    list-style: none; /* Remove os marcadores de lista padrão. */
+    padding: 0; /* Remove o preenchimento interno padrão. */
+    margin: 0; /* Remove as margens padrão. */
+    text-align: right; /* Alinha o texto dos itens do menu à direita. */
+    z-index: 10; /* Define a ordem de empilhamento do elemento, garantindo que ele fique acima de outros elementos com z-index menor. */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adiciona uma sombra sutil ao menu para destacá-lo. */
+    border-radius: 5px; /* Arredonda os cantos do menu com um raio de 5 pixels. */
+    transform-origin: top right; /* Define o ponto de origem para as transformações (escala, rotação, etc.) como o canto superior direito. */
+    transform: scaleY(0); /* Inicialmente, escala o menu verticalmente para 0, tornando-o invisível. */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave de 0.3 segundos para a propriedade 'transform', com uma função de easing 'ease-in-out'. */
+    width: auto; /* A largura se ajustará ao conteúdo. */
+    min-width: 150px; /* Define uma largura mínima para o menu móvel em 150 pixels. */
+}
+
+/* Estilos do menu móvel quando a classe 'open' é aplicada (para exibir) */
+.mobile-menu.open {
+    display: block; /* Exibe o menu móvel quando a classe 'open' é adicionada (via JavaScript). */
+    transform: scaleY(1); /* Escala o menu verticalmente para 1, tornando-o totalmente visível. */
+}
+
+/* Estilos dos links dentro do menu móvel */
+.mobile-menu li a {
+    display: block; /* Faz com que o link ocupe toda a largura do item da lista, facilitando o clique. */
+    color: white; /* Define a cor do texto dos links como branco. */
+    padding: 10px 20px; /* Define o preenchimento interno dos links. */
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+}
+
+/* Estilos dos links do menu móvel ao passar o mouse */
+.mobile-menu li a:hover {
+    background-color: #6C2D2D; /* Altera a cor de fundo do link ao passar o mouse. */
+}
+
+main {
+    padding: 20px; /* Define um preenchimento interno de 20 pixels em todos os lados do elemento <main>. */
+}
+
+p{
+    text-align: justify; /* Justifica o texto dentro dos parágrafos, alinhando-o às margens esquerda e direita. */
+}
+
+section {
+    margin-bottom: 30px; /* Adiciona uma margem inferior de 30 pixels a cada seção, criando espaçamento entre elas. */
+    background-color: white; /* Define a cor de fundo das seções como branco. */
+    padding: 20px; /* Define um preenchimento interno de 20 pixels em todos os lados das seções. */
+    border-radius: 8px; /* Arredonda os cantos das seções com um raio de 8 pixels. */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra às seções para dar um efeito de profundidade. */
+    max-width: 85%; /* Mantém uma largura máxima para telas muito grandes */
+    margin: 20px auto; /* Adiciona margem superior e inferior, e centraliza horizontalmente */;
+}
+
+section h2 {
+    color: #8d1919; /* Define a cor do texto dos títulos de nível 2 como um tom de vermelho escuro. */
+    border-bottom: 2px solid #8d1919; /* Adiciona uma borda inferior de 2 pixels de espessura e cor vermelha escura aos títulos. */
+    padding-bottom: 10px; /* Define um preenchimento inferior de 10 pixels para os títulos, criando espaço entre o texto e a borda. */
+    margin-bottom: 15px; /* Adiciona uma margem inferior de 15 pixels aos títulos, separando-os do conteúdo abaixo. */
+}
+
+#sobre-projeto img {
+    max-width: 100%; /* Garante que a largura da imagem não exceda a largura do seu container pai. */
+    height: auto; /* Mantém a proporção da altura da imagem ao ajustar a largura. */
+    display: block; /* Faz com que a imagem se comporte como um elemento de bloco, ocupando toda a largura disponível e criando quebras de linha antes e depois. */
+    margin: 15px auto; /* Define margens superior e inferior de 15 pixels e margens esquerda e direita automáticas, centralizando a imagem horizontalmente. */
+    border-radius: 8px; /* Arredonda os cantos da imagem com um raio de 8 pixels. */
+}
+
+.membros {
+    display: flex; /* Utiliza o modelo de layout Flexbox para dispor os elementos filhos (membros) em uma linha ou coluna. */
+    flex-wrap: wrap; /* Permite que os itens flexíveis quebrem para a próxima linha se não houver espaço suficiente na linha atual. */
+    gap: 40px; /* Define um espaçamento (gap) de 40 pixels entre os itens flexíveis (membros). */
+}
+
+.membro {
+    flex: 1 0 300px; /* Define as propriedades flex-grow, flex-shrink e flex-basis dos itens membros. Isso permite que eles cresçam para preencher o espaço disponível, encolham se necessário e tenham uma largura base de 300 pixels. */
+    border: 1px solid #ddd; /* Adiciona uma borda de 1 pixel de espessura, cor cinza clara, aos containers dos membros. */
+    padding: 19px; /* Define um preenchimento interno de 15 pixels em todos os lados dos containers dos membros. */
+    border-radius: 8px; /* Arredonda os cantos dos containers dos membros com um raio de 8 pixels. */
+    text-align: center; /* Centraliza o texto dentro dos containers dos membros. */
+}
+
+.membro img {
+    width: 100px; /* Define a largura das imagens dos membros em 100 pixels. */
+    height: 100px; /* Define a altura das imagens dos membros em 100 pixels. */
+    border-radius: 50%; /* Arredonda os cantos das imagens em 50%, transformando-as em círculos. */
+    object-fit: cover; /* Redimensiona a imagem para cobrir toda a área do container, cortando as partes que não se encaixam na proporção, mantendo a imagem preenchida. */
+    margin-bottom: 10px; /* Adiciona uma margem inferior de 10 pixels às imagens dos membros, separando-as do texto abaixo. */
+}
+
+.membro h3 {
+    margin-top: 0; /* Remove a margem superior padrão dos títulos de nível 3 dentro dos containers dos membros. */
+    color: #555; /* Define a cor do texto dos títulos de nível 3 como um cinza mais escuro. */
+}
+
+.membro .carreira {
+    font-style: italic; /* Define o estilo da fonte para itálico para a descrição da carreira. */
+    color: #777; /* Define a cor do texto da descrição da carreira como um cinza mais claro. */
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5 pixels à descrição da carreira. */
+}
+
+
+/* Estilos responsivos */
+/* Media query para telas maiores que 768px (desktops/tablets maiores) */
+@media (min-width: 769px) {
+    .mobile-menu{
+        display: none; /* Esconde o menu móvel em telas maiores, pois o menu principal (.menu) será exibido. */
+    }
+}
+
+/* Media query para telas menores ou iguais a 768px (tablets menores/celulares) */
+@media (max-width: 768px) {
+    .membros {
+        flex-direction: column; /* Alinha os membros verticalmente em uma coluna em telas menores. */
+        align-items: center; /* Centraliza horizontalmente os membros em telas menores. */
+    }
+
+    .membro {
+        width: 80%; /* Define a largura dos containers dos membros para 80% da largura do container pai em telas menores. */
+    }
+    .menu {
+        display: none; /* Esconde o menu principal em telas menores, pois o menu móvel será usado. */
+    }
+    .hamburger {
+        display: flex; /* Exibe o ícone do menu hambúrguer em telas menores. */
+        position: relative; /* Permite posicionar elementos dentro do hambúrguer. */
+        z-index: 11; /* Garante que o hambúrguer fique acima do menu móvel quando aberto. */
+        flex-direction: column; /* Alinha as barras do hambúrguer verticalmente. */
+        align-items: flex-end; /* Alinha as barras do hambúrguer à direita. */
+    }
+    .bar {
+        width: 25px; /* Define a largura da barra do hambúrguer. */
+        height: 3px; /* Define a altura da barra do hambúrguer. */
+        background-color: white; /* Define a cor de fundo da barra do hambúrguer. */
+        margin: 3px 0; /* Define a margem superior e inferior da barra do hambúrguer. */
+        transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo da barra. */
+    }
+    .mobile-menu {
+        top: 13%; /* Ajusta a posição superior do menu móvel em relação ao topo da viewport. */
+        right: 20px; /* Mantém a distância da direita da janela. */
+        padding-top: 10px; /* Adiciona um preenchimento superior ao menu móvel. */
+        border-top-right-radius: 0; /* Remove o arredondamento do canto superior direito do menu móvel. */
+    }
+    .inicio {
+        grid-template-columns: 1fr; /* Define uma única coluna para a seção inicial em telas menores, fazendo com que os elementos se empilhem verticalmente (se você tiver uma classe 'inicio' no seu HTML). */
+    }
+    .logo-inicio img {
+        margin-left: 0; /* Remove a margem esquerda da imagem do logo na seção inicial em telas menores (se você tiver uma classe 'logo-inicio' no seu HTML). */
+    }
+}
