@@ -46,7 +46,7 @@ nav {
 
 /* Estilos do container do logo */
 .logo img {
-    width: 100%; /* Faz com que a largura da imagem do logo se ajuste ao container */
+    width: 65%; /* Faz com que a largura da imagem do logo se ajuste ao container */
     max-width: 200px; /* Define a largura máxima da imagem do logo */
     height: auto; /* Mantém a proporção da altura da imagem */
 }
@@ -141,8 +141,8 @@ nav {
     padding: 70px; /* Define o preenchimento interno */
     padding-bottom: 40px; /* Define um preenchimento inferior maior */
     background-image: linear-gradient(#fff 70%,#fce7e7);
-    /*background-color: #ffffff; /* Define a cor de fundo como branco */
     align-items: center; /* Alinha verticalmente os itens ao centro */
+    margin-bottom: 80px;
 }
 
 /* Estilos do container do logo na seção inicial */
@@ -155,7 +155,7 @@ nav {
 
 /* Estilos da seção de introdução */
 .intro {
-    text-align: center; /* Alinha o texto ao centro */
+    text-align: justify; /* Alinha o texto ao centro */
 }
 
 /* Estilos do botão "Saiba mais" */
@@ -244,8 +244,12 @@ nav {
     }
     .inicio {
         grid-template-columns: 1fr; /* Define uma única coluna para a seção inicial em telas menores */
+        background-image: linear-gradient(#ffffff 80%,#fce7e7);
     }
     .logo-inicio img {
         margin-left: 0; /* Remove a margem esquerda da imagem do logo na seção inicial */
+    }
+    .logo{
+        width: 35%;
     }
 }

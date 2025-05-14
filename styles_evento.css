@@ -46,7 +46,7 @@ nav {
 
 /* Estilos do container do logo */
 .logo img {
-    width: 100%; /* Faz com que a largura da imagem do logo se ajuste ao container */
+    width: 65%; /* Faz com que a largura da imagem do logo se ajuste ao container */
     max-width: 200px; /* Define a largura máxima da imagem do logo */
     height: auto; /* Mantém a proporção da altura da imagem */
 }
