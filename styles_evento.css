@@ -1,140 +1,3 @@
-/* Estilos gerais do body */
-body {
-    font-family: Arial, sans-serif; /* Define a fonte padrão do texto */
-    margin: 0; /* Remove as margens padrão do body */
-    padding: 0; /* Remove o preenchimento padrão do body */
-    background-color: #fce7e7; /* Define a cor de fundo do body como um tom de rosa claro */
-}
-
-
-/* Estilos da barra superior */
-.top-bar {
-    display: flex; /* Utiliza flexbox para alinhar os itens na barra */
-    justify-content: space-between; /* Espaça os itens da barra (ícones sociais e botão) */
-    padding: 10px 20px; /* Define o preenchimento interno superior/inferior e esquerda/direita */
-    background-color: #6C2D2D; /* Define a cor de fundo da barra superior como um tom de vinho escuro */
-    color: white; /* Define a cor do texto na barra superior como branco */
-}
-
-/* Estilos do botão "Participar" */
-.participar {
-    background-color: white; /* Define a cor de fundo do botão como branco */
-    border: none; /* Remove a borda padrão do botão */
-    padding: 8px 12px; /* Define o preenchimento interno superior/inferior e esquerda/direita */
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
-    border-radius: 5px; /* Arredonda os cantos do botão */
-    list-style: none; /* Remove os estilos de lista (pode ser redundante aqui) */
-}
-
-/* Estilos do link dentro do botão "Participar" */
-.participar a {
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    color: #000; /* Define a cor do texto do link como preto */
-}
-
-/* Estilos do cabeçalho */
-header {
-    background-color: #DE7F7F; /* Define a cor de fundo do cabeçalho como um tom de rosa mais escuro */
-}
-
-/* Estilos da barra de navegação */
-nav {
-    display: flex; /* Utiliza flexbox para alinhar os itens na navegação */
-    justify-content: space-between; /* Espaça os itens da navegação (logo e menu) */
-    align-items: center; /* Alinha verticalmente os itens da navegação ao centro */
-    padding: 10px 20px; /* Define o preenchimento interno superior/inferior e esquerda/direita */
-}
-
-/* Estilos do container do logo */
-.logo img {
-    width: 65%; /* Faz com que a largura da imagem do logo se ajuste ao container */
-    max-width: 200px; /* Define a largura máxima da imagem do logo */
-    height: auto; /* Mantém a proporção da altura da imagem */
-}
-
-/* Estilos da lista do menu principal */
-.menu {
-    list-style: none; /* Remove os marcadores de lista */
-    padding: 0; /* Remove o preenchimento interno */
-    margin: 0; /* Remove as margens */
-    display: flex; /* Utiliza flexbox para alinhar os itens do menu horizontalmente */
-}
-
-/* Estilos dos itens da lista do menu principal */
-.menu li {
-    margin-left: 20px; /* Define a margem à esquerda de cada item do menu */
-}
-
-/* Estilos dos links dentro do menu principal */
-.menu a {
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    color: white; /* Define a cor do texto do link como branco */
-    padding: 8px 12px; /* Define o preenchimento interno do link */
-    display: block; /* Faz com que o link ocupe todo o espaço do item da lista, facilitando o clique */
-    border-radius: 5px; /* Arredonda os cantos do link */
-}
-
-/* Estilos dos links do menu principal ao passar o mouse */
-.menu a:hover {
-    background-color: #6C2D2D; /* Altera a cor de fundo do link ao passar o mouse */
-}
-
-/* Estilos do ícone do menu hambúrguer (para dispositivos móveis) */
-.hamburger {
-    display: none; /* Inicialmente escondido em telas maiores */
-    flex-direction: column; /* Alinha as barras verticalmente */
-    cursor: pointer; /* Altera o cursor para indicar que é clicável */
-}
-
-/* Estilos das barras do menu hambúrguer */
-.bar {
-    width: 25px; /* Define a largura da barra */
-    height: 3px; /* Define a altura da barra */
-    background-color: white; /* Define a cor de fundo da barra como branco */
-    margin: 3px 0; /* Define a margem superior e inferior entre as barras */
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor de fundo */
-}
-
-/* Estilos do menu móvel (inicialmente escondido) */
-.mobile-menu {
-    display: none; /* Inicialmente escondido */
-    position: absolute; /* Posicionamento absoluto em relação ao seu ancestral posicionado */
-    top: auto; /* Ajusta automaticamente a posição superior */
-    right: 20px; /* Define a distância da borda direita */
-    background-color: #DE7F7F; /* Define a cor de fundo do menu móvel */
-    list-style: none; /* Remove os marcadores de lista */
-    padding: 0; /* Remove o preenchimento interno */
-    margin: 0; /* Remove as margens */
-    text-align: right; /* Alinha o texto dos itens à direita */
-    z-index: 10; /* Garante que o menu fique acima de outros elementos */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adiciona uma sombra ao menu */
-    border-radius: 5px; /* Arredonda os cantos do menu */
-    transform-origin: top right; /* Define a origem da transformação para o canto superior direito */
-    transform: scaleY(0); /* Inicialmente escalado verticalmente para 0 (escondido) */
-    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave para a abertura/fechamento */
-    width: auto; /* Largura automática */
-    min-width: 150px; /* Largura mínima do menu */
-}
-
-/* Estilos do menu móvel quando a classe 'open' é aplicada (para exibir) */
-.mobile-menu.open {
-    display: block; /* Exibe o menu */
-    transform: scaleY(1); /* Escala verticalmente para 1 (visível) */
-}
-
-/* Estilos dos links dentro do menu móvel */
-.mobile-menu li a {
-    display: block; /* Faz com que o link ocupe todo o espaço do item da lista */
-    color: white; /* Define a cor do texto do link como branco */
-    padding: 10px 20px; /* Define o preenchimento interno do link */
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-}
-
-/* Estilos dos links do menu móvel ao passar o mouse */
-.mobile-menu li a:hover {
-    background-color: #6C2D2D; /* Altera a cor de fundo do link ao passar o mouse */
-}
-
 .eventos {
     background-color: #fff;
     padding: 40px;
@@ -146,31 +9,26 @@ nav {
 }
 
 .eventos h1 {
-    text-align: center;
     color: #912f2f;
     font-size: 40px;
 }
 
-/* Estilos de cada item de evento -- MODIFIED */
 .item-evento {
     margin-bottom: 40px;
     padding: 20px;
     border: 1px solid #f1cfcf;
     border-radius: 6px;
     display: flex;
-    flex-direction: row; /* CHANGED from column to row for side-by-side layout */
-    align-items: flex-start; /* Aligns items to the top */
-    gap: 40px; /* ADDED space between image and text */
+    flex-direction: row;
+    align-items: flex-start; 
+    gap: 40px;
 }
 
-/* Estilos da informação do evento -- MODIFIED */
 .info-evento {
-    /* margin-bottom: 20px; /* Removed, gap handles spacing */
-    /* width: 100%; /* Removed, flex will handle width */
-    flex-grow: 1; /* Allows text area to grow */
-    flex-basis: 0; /* Start with no intrinsic width, will grow to fill space */
-    order: 2; /* Text will be on the right of the image */
-    min-width: 0; /* Prevents text overflow issues in flex containers */
+    flex-grow: 1; 
+    flex-basis: 0; 
+    order: 2; 
+    min-width: 0;
 }
 
 .info-evento h2 {
@@ -180,27 +38,22 @@ nav {
     font-size: 22px;
 }
 
-.info-evento .descricao-evento { /* Targeted .descricao-evento specifically */
-    font-size: 1.0em;
+.info-evento .descricao-evento {
     line-height: 1.6;
     margin-bottom: 15px;
     text-align: justify;
 }
 
-/* Estilos do container do carrossel -- MODIFIED */
 .carousel-container {
     position: relative;
     overflow: hidden;
     border-radius: 6px;
-    /* width: 100%; /* Removed, flex will handle width */
-    /* height: auto; /* Already auto, keeping */
-    /* margin-bottom: 20px; /* Removed, gap handles spacing */
-    order: 1; /* Image carousel will be on the left */
-    flex-basis: 390px; /* Define a base width for "bom tamanho" - adjust as needed */
-    flex-shrink: 0; /* Prevent shrinking */
-    flex-grow: 0; /* Do not grow beyond flex-basis */
-    max-width: 35%; /* Alternative: use percentage, ensure it doesn't get too large on very wide .item-evento, could also be a pixel value like 400px */
-    align-self: flex-start; /* Ensures the carousel aligns to the top if text is very long */
+    order: 1; 
+    flex-basis: 390px; 
+    flex-shrink: 0;
+    flex-grow: 0; 
+    max-width: 35%; 
+    align-self: flex-start; 
 }
 
 .carousel-slide {
@@ -214,7 +67,7 @@ nav {
 .carousel-slide img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* This is fine, ensures the image covers the area if you were to set a fixed height on the slide/container */
+    object-fit: cover; 
     flex-shrink: 0;
 }
 
@@ -276,14 +129,14 @@ nav {
 }
 
 
-/* Media query para telas maiores que 768px (desktops/tablets maiores) */
+
 @media (min-width: 769px) {
     .mobile-menu{
         display: none;
     }
 }
 
-/* Media query para telas menores ou iguais a 768px (tablets menores/celulares) */
+
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -314,30 +167,30 @@ nav {
     }
     .eventos {
         width: 95%;
-        padding: 20px; /* Reduced padding for smaller screens */
+        padding: 20px; 
         margin: 20px auto;
        
     }
 
-    /* MODIFIED for smaller screens */
+    
     .item-evento {
-        flex-direction: column; /* Stack items vertically */
-        gap: 15px; /* Adjust gap for vertical stacking */
+        flex-direction: column;
+        gap: 15px;
     }
 
     .info-evento {
-        order: initial; /* Reset order */
-        width: 100%; /* Take full width */
-        flex-basis: auto; /* Reset flex-basis */
-        margin-bottom: 10px; /* Add some margin if needed */
+        order: initial;
+        width: 100%; 
+        flex-basis: auto;
+        margin-bottom: 10px; 
     }
 
     .carousel-container {
-        order: initial; /* Reset order */
-        width: 100%; /* Take full width */
-        flex-basis: auto; /* Reset flex-basis */
-        max-width: none; /* Remove max-width constraint */
-        margin-bottom: 10px; /* Add some margin if needed */
+        order: initial;
+        width: 100%; 
+        flex-basis: auto;
+        max-width: none; 
+        margin-bottom: 10px;
     }
 
     .carousel-container .arrow {
