@@ -6,6 +6,7 @@ body {
     background-color: #fce7e7; /* Define a cor de fundo do body como um tom de rosa claro */
 }
 
+
 /* Estilos da barra superior */
 .top-bar {
     display: flex; /* Utiliza flexbox para alinhar os itens na barra */
@@ -135,188 +136,212 @@ nav {
 }
 
 .eventos {
-    background-color: #fff; /* Define a cor de fundo da seção de eventos como branco */
-    padding: 40px; /* Define o preenchimento interno da seção */
-    border-radius: 8px; /* Arredonda os cantos da seção */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave à seção */
-    width: 80%; /* Define a largura da seção */
-    max-width: 80%; /* Define a largura máxima da seção */
-    margin: 30px auto; /* Centraliza a seção horizontalmente com margens superior e inferior */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgb(134, 8, 8);
+    width: 80%;
+     max-width: 80%;  
+    margin: 30px auto;
 }
 
-/* Estilos do título da seção de eventos */
 .eventos h1 {
-    text-align: center; /* Alinha o texto do título ao centro */
+    text-align: center;
+    color: #912f2f;
+    font-size: 40px;
 }
 
-/* Estilos de cada item de evento */
+/* Estilos de cada item de evento -- MODIFIED */
 .item-evento {
-    margin-bottom: 40px; /* Define a margem inferior entre os itens de evento */
-    padding: 20px; /* Define o preenchimento interno do item de evento */
-    border: 1px solid #eee; /* Adiciona uma borda sutil ao redor do item de evento */
-    border-radius: 6px; /* Arredonda os cantos do item de evento */
-    display: flex; /* Utiliza flexbox para alinhar os elementos dentro do item */
-    flex-direction: column; /* Alinha os elementos verticalmente por padrão */
-    align-items: flex-start; /* Alinha os itens à esquerda */
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #f1cfcf;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row; /* CHANGED from column to row for side-by-side layout */
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 40px; /* ADDED space between image and text */
 }
 
-/* Estilos da informação do evento */
+/* Estilos da informação do evento -- MODIFIED */
 .info-evento {
-    margin-bottom: 20px; /* Define a margem inferior da informação do evento */
-    width: 100%; /* Ocupa toda a largura disponível */
+    /* margin-bottom: 20px; /* Removed, gap handles spacing */
+    /* width: 100%; /* Removed, flex will handle width */
+    flex-grow: 1; /* Allows text area to grow */
+    flex-basis: 0; /* Start with no intrinsic width, will grow to fill space */
+    order: 2; /* Text will be on the right of the image */
+    min-width: 0; /* Prevents text overflow issues in flex containers */
 }
 
-/* Estilos do título do evento */
 .info-evento h2 {
-    color: #555; /* Define a cor do texto do título */
-    margin-top: 0; /* Remove a margem superior padrão */
-    margin-bottom: 8px; /* Define a margem inferior */
-    font-size: 22px; /* Define o tamanho da fonte */
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 22px;
 }
 
-/* Estilos da informação e descrição do evento */
-.info-evento, .descricao-evento {
-    font-size: 1.0em; /* Define o tamanho da fonte */
-    line-height: 1.6; /* Define a altura da linha */
-    margin-bottom: 15px; /* Define a margem inferior */
-    text-align: justify; /* Justifica o texto */
+.info-evento .descricao-evento { /* Targeted .descricao-evento specifically */
+    font-size: 1.0em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
-/* Estilos do container do carrossel */
+/* Estilos do container do carrossel -- MODIFIED */
 .carousel-container {
-    position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-    overflow: hidden; /* Esconde os elementos que ultrapassam o container */
-    border-radius: 6px; /* Arredonda os cantos do carrossel */
-    width: 100%; /* Ocupa toda a largura disponível */
-    height: auto; /* Altura automática */
-    margin-bottom: 20px; /* Define a margem inferior */
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    /* width: 100%; /* Removed, flex will handle width */
+    /* height: auto; /* Already auto, keeping */
+    /* margin-bottom: 20px; /* Removed, gap handles spacing */
+    order: 1; /* Image carousel will be on the left */
+    flex-basis: 390px; /* Define a base width for "bom tamanho" - adjust as needed */
+    flex-shrink: 0; /* Prevent shrinking */
+    flex-grow: 0; /* Do not grow beyond flex-basis */
+    max-width: 35%; /* Alternative: use percentage, ensure it doesn't get too large on very wide .item-evento, could also be a pixel value like 400px */
+    align-self: flex-start; /* Ensures the carousel aligns to the top if text is very long */
 }
 
-/* Estilos do slide do carrossel */
 .carousel-slide {
-    display: flex; /* Utiliza flexbox para alinhar as imagens horizontalmente */
-    width: 100%; /* Ocupa toda a largura do container */
-    height: auto; /* Altura automática */
-    transition: transform 0.5s ease-in-out; /* Adiciona uma transição suave para o movimento */
-    transform: translateX(0%); /* Posição inicial do slide */
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0%);
 }
 
-/* Estilos das imagens dentro do slide do carrossel */
 .carousel-slide img {
-    width: 100%; /* Ocupa toda a largura do slide */
-    height: auto; /* Altura automática */
-    object-fit: cover; /* Mantém a proporção da imagem e cobre o container */
-    flex-shrink: 0; /* Impede que as imagens encolham */
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* This is fine, ensures the image covers the area if you were to set a fixed height on the slide/container */
+    flex-shrink: 0;
 }
 
-/* Estilos dos controles do carrossel (bolinhas) */
 .carousel-controls {
-    position: absolute; /* Posicionamento absoluto dentro do container */
-    bottom: 15px; /* Distância da parte inferior */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translateX(-50%); /* Ajusta o centro */
-    display: flex; /* Utiliza flexbox para alinhar as bolinhas */
-    gap: 10px; /* Espaçamento entre as bolinhas */
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
 }
 
-/* Estilos de cada bolinha de controle */
 .dot {
-    display: inline-block; /* Alinha as bolinhas horizontalmente */
-    width: 12px; /* Largura da bolinha */
-    height: 12px; /* Altura da bolinha */
-    border-radius: 50%; /* Forma circular */
-    background-color: #bbb; /* Cor de fundo padrão */
-    cursor: pointer; /* Indica que é clicável */
-    opacity: 0.7; /* Opacidade inicial */
-    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-/* Estilos da bolinha ativa */
 .dot.active {
-    background-color: #333; /* Cor de fundo da bolinha ativa */
-    opacity: 1; /* Opacidade total */
+    background-color: #333;
+    opacity: 1;
 }
 
-/* Estilos da bolinha ao passar o mouse */
 .dot:hover {
-    opacity: 1; /* Opacidade total ao passar o mouse */
+    opacity: 1;
 }
 
-/* Estilos para as flechas do carrossel */
 .carousel-container .arrow {
-    position: absolute; /* Posicionamento absoluto dentro do container */
-    top: 50%; /* Centraliza verticalmente */
-    transform: translateY(-50%); /* Ajusta o centro vertical */
-    font-size: 2em; /* Tamanho da fonte das flechas */
-    color: rgba(0, 0, 0, 0.5); /* Cor das flechas com transparência */
-    background: none; /* Remove o fundo padrão */
-    border: none; /* Remove a borda padrão */
-    padding: 10px; /* Preenchimento interno */
-    cursor: pointer; /* Indica que é clicável */
-    z-index: 10; /* Garante que as flechas fiquem acima das imagens */
-    opacity: 0.7; /* Opacidade inicial */
-    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
-    user-select: none; /* Evita a seleção do texto da flecha */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.5);
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    user-select: none;
 }
 
-/* Estilos das flechas ao passar o mouse */
 .carousel-container .arrow:hover {
-    opacity: 1; /* Opacidade total ao passar o mouse */
+    opacity: 1;
 }
 
-/* Estilos da flecha "anterior" */
 .carousel-container .prev {
-    left: 10px; /* Posição à esquerda */
+    left: 10px;
 }
 
-/* Estilos da flecha "próximo" */
 .carousel-container .next {
-    right: 10px; /* Posição à direita */
+    right: 10px;
 }
 
 
 /* Media query para telas maiores que 768px (desktops/tablets maiores) */
 @media (min-width: 769px) {
     .mobile-menu{
-        display: none; /* Esconde o menu móvel em telas maiores */
+        display: none;
     }
 }
 
 /* Media query para telas menores ou iguais a 768px (tablets menores/celulares) */
 @media (max-width: 768px) {
     .menu {
-        display: none; /* Esconde o menu principal em telas menores */
+        display: none;
     }
     .hamburger {
-        display: flex; /* Exibe o ícone do menu hambúrguer */
-        position: relative; /* Permite posicionar elementos dentro */
-        z-index: 11; /* Garante que o hambúrguer fique acima do menu móvel */
-        flex-direction: column; /* Alinha as barras verticalmente */
-        align-items: flex-end; /* Alinha as barras à direita */
+        display: flex;
+        position: relative;
+        z-index: 11;
+        flex-direction: column;
+        align-items: flex-end;
     }
     .bar {
-        width: 25px; /* Define a largura da barra */
-        height: 3px; /* Define a altura da barra */
-        background-color: white; /* Define a cor de fundo da barra */
-        margin: 3px 0; /* Define a margem superior e inferior */
-        transition: background-color 0.3s ease; /* Adiciona transição suave */
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+        transition: background-color 0.3s ease;
     }
     .mobile-menu {
-        top: 13%; /* Ajusta a posição superior do menu móvel */
-        right: 20px; /* Mantém a distância da direita */
-        padding-top: 10px; /* Adiciona um preenchimento superior */
-        border-top-left-radius: 0; /* Remove o arredondamento superior esquerdo */
-        border-top-right-radius: 0; /* Remove o arredondamento superior direito */
+        top: 13%;
+        right: 20px;
+        padding-top: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    h1{
+        font-size: 30px;
     }
     .eventos {
         width: 95%;
-        padding: 30px;
+        padding: 20px; /* Reduced padding for smaller screens */
         margin: 20px auto;
-        max-width: 80%;
+       
+    }
+
+    /* MODIFIED for smaller screens */
+    .item-evento {
+        flex-direction: column; /* Stack items vertically */
+        gap: 15px; /* Adjust gap for vertical stacking */
+    }
+
+    .info-evento {
+        order: initial; /* Reset order */
+        width: 100%; /* Take full width */
+        flex-basis: auto; /* Reset flex-basis */
+        margin-bottom: 10px; /* Add some margin if needed */
+    }
+
+    .carousel-container {
+        order: initial; /* Reset order */
+        width: 100%; /* Take full width */
+        flex-basis: auto; /* Reset flex-basis */
+        max-width: none; /* Remove max-width constraint */
+        margin-bottom: 10px; /* Add some margin if needed */
     }
 
     .carousel-container .arrow {
-        font-size: 1.5em; /* Reduz o tamanho das flechas em telas menores */
+        font-size: 1.5em;
         padding: 5px;
     }
 }

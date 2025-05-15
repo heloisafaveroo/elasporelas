@@ -137,11 +137,11 @@ nav {
 
 .curiosidades {
     background-color: #fff;
-    padding: 30px;
+    padding: 30px; /* Default padding */
     border-radius: 8px;
     box-shadow: 0 3px 5px rgb(134, 8, 8);
-    max-width: 80%; /* Mantém uma largura máxima para telas muito grandes */
-    margin: 20px auto; /* Adiciona margem superior e inferior, e centraliza horizontalmente */
+    max-width: 80%;
+    margin: 20px auto;
 }
 
 .curiosidades h1 {
@@ -152,48 +152,57 @@ nav {
 
 .item-curiosidade {
     display: flex;
-    align-items: center;
+    /* align-items: center; /* Vertically center items in the row for desktop */
+    align-items: flex-start; /* Align items to the top for desktop */
     margin-bottom: 25px;
     padding: 15px;
     border: 1px solid #f1cfcf;
     border-radius: 6px;
-    margin-left: 20px; /* Adicionando margem esquerda para não colar na borda */
-    margin-right: 20px; /* Adicionando margem direita para não colar na borda */
+    gap: 20px; /* Space between image, content, and button on desktop */
+    /* Removed margin-left and margin-right here, parent .curiosidades handles centering */
 }
 
 .imagem-curiosidade {
-    width: 350px; /* Define a largura da imagem */
-    height: 200px; /* Define a altura da imagem */
-    border-radius: 6px; /* Mantém a borda arredondada */
-    margin-right: 20px; /* Mantém o espaçamento à direita da imagem */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    flex-shrink: 0; /* Impede que a imagem diminua demais */
+    width: 250px; /* Adjust width for desktop view */
+    height: 180px; /* Adjust height for desktop view */
+    border-radius: 6px;
+    object-fit: cover; /* Image will cover the area, might be cropped */
+    flex-shrink: 0; /* Prevent image from shrinking in flex row */
 }
 
 .conteudo-curiosidade {
-    flex-grow: 1;
-    display: flex; /* Adicionamos flexbox aqui */
-    flex-direction: column; /* Alinhamos os itens verticalmente */
+    flex-grow: 1; /* Allows this div to take up available space */
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Fix for potential flex item overflow */
 }
+
+.conteudo-curiosidade h2 {
+    margin-top: 0; /* Remove default margin for consistency */
+}
+
 .conteudo-curiosidade p {
     color: #777;
     font-size: 0.9em;
     line-height: 1.4;
     margin-bottom: 15px;
-    text-align: justify; 
+    text-align: justify;
 }
+
 .saiba-mais {
     background-color: #6C2D2D;
     color: #fff;
-    padding: 2px 40px;
+    padding: 8px 20px; /* Adjusted padding for a more balanced look */
     text-decoration: none;
     border-radius: 4px;
     font-size: 0.9em;
     transition: background-color 0.3s ease;
-    margin-top: auto; /* Empurra o botão para a parte inferior do .conteudo-curiosidade */
-    margin-left: 0; /* Remove a margem esquerda */
-    text-align: center; /* Centraliza o texto dentro do botão */
-    margin-top: 355px;
+    text-align: center;
+    /* margin-top: 355px; */ /* CRITICAL: REMOVED this problematic margin */
+    margin-top: 10px; /* Add a small top margin for spacing if needed, or rely on gap */
+    align-self: flex-start; /* Aligns button to the start of the cross-axis if item-curiosidade has flex-start */
+                           /* Or use align-self: center if item-curiosidade uses align-items:center */
+    white-space: nowrap; /* Prevents button text from breaking into two lines */
 }
 
 .saiba-mais:hover {
@@ -203,59 +212,72 @@ nav {
 /* Estilos para telas menores */
 @media (max-width: 768px) {
     .curiosidades {
-        padding: 20px;
+        padding: 15px; /* Reduced padding for smaller screens */
+        max-width: 95%; /* Allow content to use more screen width */
     }
 
     .item-curiosidade {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-left: 10px; /* Reduzindo as margens em telas menores */
-        margin-right: 10px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally in column mode */
+        text-align: center; /* Center text for children like h2 if not overridden */
+        gap: 15px; /* Adjust gap for vertical stacking */
     }
 
-    .imagem-placeholder {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .saiba-mais {
-        margin-left: 0;
-        margin-top: 15px;
-        height: 20px;
+    .imagem-curiosidade { /* CORRECTED: Was .imagem-placeholder */
+        width: 80%;    /* Image takes full width of its container */
+        max-width: 320px; /* Optional: prevent image from becoming overly large on wider small screens */
+        height: auto;     /* Maintain aspect ratio */
+        margin-right: 0;  /* Not needed in column layout */
+        /* margin-bottom: 15px; -- Replaced by gap on .item-curiosidade */
     }
 
     .conteudo-curiosidade {
-        text-align: center;
-    }    
+        text-align: center; /* Ensure text within this block is centered */
+        width: 100%; /* Take full available width */
+    }
+    
+    .conteudo-curiosidade p {
+        text-align: justify; /* Or text-align: center; if preferred for mobile */
+    }
+
+    .saiba-mais {
+        /* margin-left: 0; -- Not needed, align-items:center on parent handles centering */
+        margin-top: 15px; /* Keep a consistent margin from the content above */
+        /* height: 20px; -- REMOVED: Let padding and content define height */
+        width: fit-content; /* Button width adjusts to its content + padding */
+        padding: 10px 25px; /* Slightly larger padding for easier tapping on mobile */
+    }
+
+    /* Hamburger menu styles (no changes, assuming they are fine) */
     .menu {
-        display: none; /* Esconde o menu principal em telas menores */
+        display: none;
     }
     .hamburger {
-        display: flex; /* Exibe o ícone do menu hambúrguer */
-        position: relative; /* Permite posicionar elementos dentro */
-        z-index: 11; /* Garante que o hambúrguer fique acima do menu móvel */
-        flex-direction: column; /* Alinha as barras verticalmente */
-        align-items: flex-end; /* Alinha as barras à direita */
+        display: flex;
+        position: relative;
+        z-index: 11;
+        flex-direction: column;
+        align-items: flex-end;
     }
     .bar {
-        width: 25px; /* Define a largura da barra */
-        height: 3px; /* Define a altura da barra */
-        background-color: white; /* Define a cor de fundo da barra */
-        margin: 3px 0; /* Define a margem superior e inferior */
-        transition: background-color 0.3s ease; /* Adiciona transição suave */
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 3px 0;
+        transition: background-color 0.3s ease;
     }
     .mobile-menu {
-        top: 13%; /* Ajusta a posição superior do menu móvel */
-        right: 20px; /* Mantém a distância da direita */
-        padding-top: 10px; /* Adiciona um preenchimento superior */
-        border-top-left-radius: 0; /* Remove o arredondamento superior esquerdo */
-        border-top-right-radius: 0; /* Remove o arredondamento superior direito */
+        top: 13%;
+        right: 20px;
+        padding-top: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
     }
 }
+
 /* Media query para telas maiores que 768px (desktops/tablets maiores) */
 @media (min-width: 769px) {
     .mobile-menu{
-        display: none; /* Esconde o menu móvel em telas maiores */
+        display: none;
     }
 }
