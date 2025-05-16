@@ -11,8 +11,10 @@ body {
     display: flex; 
     justify-content: space-between;
     padding: 10px 20px; 
-    background-color: #6C2D2D; 
-    color: white; 
+    background-color: #5c1919; 
+    color: white;
+     background-image: linear-gradient(to bottom, #5c1919 80%, #ffffff);
+    
 }
 /* Estilos do botão "Participar" */
 .participar {
@@ -31,9 +33,7 @@ body {
 }
 
 /* Estilos do cabeçalho */
-header {
-    background-color: #DE7F7F;
-}
+
 
 /* Estilos da barra de navegação */
 nav {
@@ -45,7 +45,7 @@ nav {
 
 /* Estilos do container do logo */
 .logo img {
-    width: 65%; 
+    width: 40%; 
     max-width: 200px; 
     height: auto; 
 }
@@ -66,7 +66,10 @@ nav {
 /* Estilos dos links dentro do menu principal */
 .menu a {
     text-decoration: none; 
-    color: white;
+    font-weight: bold;
+    color: rgb(94, 10, 10);
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 8px 12px; 
     display: block; 
     border-radius: 5px; 
@@ -74,7 +77,7 @@ nav {
 
 /* Estilos dos links do menu principal ao passar o mouse */
 .menu a:hover {
-    background-color: #6C2D2D; 
+    background-color: #fce7e7;
 }
 
 /* Estilos do ícone do menu hambúrguer (para dispositivos móveis) */
