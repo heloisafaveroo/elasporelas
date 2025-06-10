@@ -122,7 +122,7 @@ function Pesquisas() {
                         <h2>Metodologia do Projeto</h2>
                         <p>Nossa metodologia combina abordagens quantitativas e qualitativas para obter uma compreensão abrangente das experiências femininas. Utilizamos técnicas estatísticas avançadas e análises temáticas profundas para garantir a validade e confiabilidade dos resultados.</p>
                         <div className="link-item">
-                            {/* Placeholder link, update if actual link exists */}
+                            
                             <h5><a href="#" target="_blank" rel="noopener noreferrer">Empowerment Theory and Women's Leadership in Brazil</a></h5>
                             <div className="author">Silva, M. A.; Santos, L. P. (2023)</div>
                             <div className="description">Este estudo investiga os fatores que contribuem para o empoderamento feminino no contexto brasileiro, analisando lideranças em diferentes setores da sociedade.</div>

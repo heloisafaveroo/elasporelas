@@ -2,8 +2,21 @@ import React, { useState, useEffect } from 'react';
 import '../css/styles_evento.css';
 import '../css/styles_menu.css';
 import { Link } from 'react-router-dom';
+import imagem1 from '../imagem/FOTO1-mês das mulheres.jpg';
+import imagem2 from '../imagem/FOTO2-mês das mulhes.png';
+import imagem3 from '../imagem/FOTO3-mês das mulhes.png';
+import imagem4 from '../imagem/FOTO4-mês das mulhes.png';
+import imagem5 from "../imagem/FOTO5-mês das mulhes.png";
+import imagem6 from "../imagem/FOTO6-mês das mulhes.png";
+import imagem7 from "../imagem/FOTO7-mês das mulhes.png";
+import imagem8 from "../imagem/FOTO8-mês das mulhes.png";
+import imagem9 from "../imagem/FOTO9-mês das mulhes.jpg";
+import imagem10 from "../imagem/FOTO10-mês das mulhes.png";
+import imagem11 from "../imagem/FOTO11-mês das mulhes.png";
+import imagem12 from "../imagem/FOTO12-mês das mulhes.png";
 
-function Eventos() {
+
+export default function Eventos() { // O 'export default' foi movido para a declaração da função.
     // State for carousels - using an array to manage multiple carousels
     const [slideIndexes, setSlideIndexes] = useState([1, 1, 1, 1, 1, 1]); // Initialize for 6 carousels
 
@@ -11,8 +24,9 @@ function Eventos() {
     const plusSlides = (n, carouselIndex) => {
         setSlideIndexes(prevIndexes => {
             const newIndexes = [...prevIndexes];
+            // Chamar showSlides com o novo slideIndex calculado antes de atualizar o estado
             showSlides(newIndexes[carouselIndex] + n, carouselIndex);
-            return newIndexes; // This return is just to satisfy map, state update is async
+            return newIndexes; // O retorno é apenas para satisfazer o map, a atualização de estado é assíncrona
         });
     };
 
@@ -20,8 +34,9 @@ function Eventos() {
     const currentSlide = (n, carouselIndex) => {
         setSlideIndexes(prevIndexes => {
             const newIndexes = [...prevIndexes];
+            // Chamar showSlides com o slide 'n' antes de atualizar o estado
             showSlides(n, carouselIndex);
-            return newIndexes; // This return is just to satisfy map, state update is async
+            return newIndexes; // O retorno é apenas para satisfazer o map, a atualização de estado é assíncrona
         });
     };
 
@@ -32,6 +47,9 @@ function Eventos() {
         if (carouselIndex >= carousels.length) return; // Index out of bounds
 
         const currentCarousel = carousels[carouselIndex];
+        // Adicionada verificação para currentCarousel antes de tentar querySelectorAll
+        if (!currentCarousel) return;
+
         const slides = currentCarousel.querySelectorAll('.carousel-slide img');
         const dots = currentCarousel.querySelectorAll('.carousel-controls .dot');
 
@@ -84,7 +102,7 @@ function Eventos() {
             hamburger.addEventListener('click', toggleMenu);
         }
 
-         const handleMenuItemClick = (event) => {
+        const handleMenuItemClick = (event) => {
             menuItems.forEach(item => item.classList.remove('active'));
             mobileMenuItems.forEach(item => item.classList.remove('active'));
             let targetLink = event.target.tagName === 'A' ? event.target : event.target.closest('a');
@@ -113,7 +131,7 @@ function Eventos() {
                 item.classList.remove('active');
             }
         });
-         mobileMenuItems.forEach(item => {
+        mobileMenuItems.forEach(item => {
             if (item.getAttribute('href') === currentPath) {
                 item.classList.add('active');
             } else {
@@ -139,9 +157,12 @@ function Eventos() {
     // Effect to re-run showSlides when slideIndexes state changes
     useEffect(() => {
         slideIndexes.forEach((index, carouselIdx) => {
+            // Note: This useEffect might cause multiple renders if showSlides updates state again.
+            // Consider refactoring showSlides to not update state directly if called from here,
+            // or ensure it's idempotent. For now, it keeps your original logic.
             showSlides(index, carouselIdx);
         });
-    }, [slideIndexes]);
+    }, [slideIndexes]); // Depende de slideIndexes para re-executar
 
     return (
         <div>
@@ -217,10 +238,10 @@ function Eventos() {
                             <div className="carousel-container">
                                 <button className="arrow prev" onClick={() => plusSlides(-1, 0)}>❮</button>
                                 <div className="carousel-slide">
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO1-mês das mulheres.jpg`} alt="Evento26 1" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO2-mês das mulhes.png`} alt="Evento26 2" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO3-mês das mulhes.png`} alt="Evento26 3" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO3.1-mês das mulhes.png`} alt="Evento26 4" />
+                                    <img src={imagem1}/>
+                                    <img src={imagem2} />
+                                    <img src={imagem3} />
+                                    <img src={imagem4} />
                                 </div>
                                 <button className="arrow next" onClick={() => plusSlides(1, 0)}>❯</button>
                                 <div className="carousel-controls">
@@ -234,10 +255,10 @@ function Eventos() {
                             <div className="carousel-container">
                                 <button className="arrow prev" onClick={() => plusSlides(-1, 1)}>❮</button>
                                 <div className="carousel-slide">
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO4-mês das mulhes.png`} alt="Evento27 1" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO5-mês das mulhes.png`} alt="Evento27 2" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO6-mês das mulhes.png`} alt="Evento27 3" />
-                                    <img src={`${process.env.PUBLIC_URL}/imagem/FOTO7-mês das mulhes.png`} alt="Evento27 4" />
+                                    <img src={imagem5} />
+                                    <img src={imagem6}/>
+                                    <img src={imagem7} />
+                                    <img src={imagem8}/>
                                 </div>
                                 <button className="arrow next" onClick={() => plusSlides(1, 1)}>❯</button>
                                 <div className="carousel-controls">
@@ -254,8 +275,7 @@ function Eventos() {
                     <div className="item-evento" data-aos="fade-up">
                         <div className="info-evento">
                             <h2>Eventos de Setembro</h2>
-                            {/* ... (rest of the event info) ... */}
-                             <div className="evento-meta">
+                            <div className="evento-meta">
                                 <div className="meta-item">
                                     <span>📅</span>
                                     <span>10 e 20 de de Setembro, 2024</span>
@@ -265,14 +285,14 @@ function Eventos() {
                                     <span>Auditório - Prefeitura de Assis</span>
                                 </div>
                             </div>
-                             <p className="descricao-evento">
+                            <p className="descricao-evento">
                                 Sendo então no dia 10/09 realizado duas sessões para alunos e servidores,
-                                uma breve apresentação que contextualizou o que o Coletivo é e como ele 
+                                uma breve apresentação que contextualizou o que o Coletivo é e como ele
                                 atua dentro e fora da comunidade escolar.
-                                <br/>Por fim os integrantes do Coletivo apresentaram no dia 20/09 em um evento realizado pelo IFPR - 
-                                Câmpus Cascavel "V Scientif" no qual Gabrielle Aurélio, Rafaela Ramos e João Medeiros apresentaram 
+                                <br/>Por fim os integrantes do Coletivo apresentaram no dia 20/09 em um evento realizado pelo IFPR -
+                                Câmpus Cascavel "V Scientif" no qual Gabrielle Aurélio, Rafaela Ramos e João Medeiros apresentaram
                                 o trabalho entitulado: "MULHERES NA AGRICULTURA: DESAFIOS PARA A PROFISSIONALIZAÇÃO E A RELAÇÃO COM A
-                                TERRA." E os integrantes Guilherme Coppo, Ana dos Santos e Gabrielly da Rosa apresentaram o trabalho 
+                                TERRA." E os integrantes Guilherme Coppo, Ana dos Santos e Gabrielly da Rosa apresentaram o trabalho
                                 entitulado: "A DESCONSTRUÇÃO DE CONCEITOS E DE ESTEREÓTIPOS SOBRE A MULHER NAS CIÊNCIAS EXATAS: UMA
                                 REFLEXÃO SOBRE A MULHER NO CURSO TÉCNICO EM ELETROMECÂNICA INTEGRADO AO ENSINO MÉDIO."
                             </p>
@@ -286,8 +306,7 @@ function Eventos() {
                     <div className="item-evento" data-aos="fade-up">
                         <div className="info-evento">
                             <h2>Atividades de Março</h2>
-                            {/* ... (rest of the event info) ... */}
-                             <div className="evento-meta">
+                            <div className="evento-meta">
                                 <div className="meta-item">
                                     <span>📅</span>
                                     <span>Mês de Março, 2024</span>
@@ -297,7 +316,7 @@ function Eventos() {
                                     <span>IFPR - Campus Assis Chateaubriand</span>
                                 </div>
                             </div>
-                             <p className="descricao-evento">
+                            <p className="descricao-evento">
                                 Coletivo de Mulheres Elas por Elas, no mês de março em alusão ao dia internacional
                                 da mulher e por ser um mês voltado há várias lutas femininas, realizou e participou
                                 de algumas atividades, confira abaixo 👇
@@ -309,7 +328,7 @@ function Eventos() {
                                 <br/>• Participou da palestra sobre o tema “Cidadania Feminina” promovido pela APP-Sindicato.
                             </p>
                         </div>
-                         {/* Carousel 2 */}
+                        {/* Carousel 2 */}
                         <div className="carousel-container">
                             <button className="arrow prev" onClick={() => plusSlides(-1, 2)}>❮</button>
                             <div className="carousel-slide">
@@ -326,11 +345,11 @@ function Eventos() {
                         </div>
                     </div>
 
-                     {/* Evento 4 */}
+                    {/* Evento 4 */}
                     <div className="item-evento" data-aos="fade-up">
                         <div className="info-evento">
                             <h2>X FEPIAC: Feira de Ensino, Extensão, Pesquisa e Inovação</h2>
-                             <div className="evento-meta">
+                            <div className="evento-meta">
                                 <div className="meta-item">
                                     <span>📅</span>
                                     <span>24 á 26 de outubro, 2023</span>
@@ -340,7 +359,7 @@ function Eventos() {
                                     <span>IFPR - Campus Assis Chateaubriand</span>
                                 </div>
                             </div>
-                             <p className="descricao-evento">
+                            <p className="descricao-evento">
                                 Nessa semana aconteceu a IX FEPIAC Feira de Ensino,
                                 Extensão, Pesquisa e Inovação do IFPR Assis Chateaubriand e o IV SEPE Seminário
                                 de Pesquisa e Extensão no qual o Coletivo de Mulheres 'Elas por Elas' participou.
@@ -355,7 +374,7 @@ function Eventos() {
                                 auxílio das coordenadoras para a submissão dos trabalhos.
                             </p>
                         </div>
-                         {/* Carousel 3 */}
+                        {/* Carousel 3 */}
                         <div className="carousel-container">
                             <button className="arrow prev" onClick={() => plusSlides(-1, 3)}>❮</button>
                             <div className="carousel-slide">
@@ -372,11 +391,11 @@ function Eventos() {
                         </div>
                     </div>
 
-                     {/* Evento 5 */}
-                     <div className="item-evento" data-aos="fade-up">
+                    {/* Evento 5 */}
+                    <div className="item-evento" data-aos="fade-up">
                         <div className="info-evento">
                             <h2>FIciências 2023: XII Feira de Inovação das Ciências e Engenharias</h2>
-                             <div className="evento-meta">
+                            <div className="evento-meta">
                                 <div className="meta-item">
                                     <span>📅</span>
                                     <span>16 á 20 de outubro, 2023</span>
@@ -386,7 +405,7 @@ function Eventos() {
                                     <span>Foz do Iguaçu</span>
                                 </div>
                             </div>
-                             <p className="descricao-evento">
+                            <p className="descricao-evento">
                                 o Coletivo de Mulheres participou do Ficiências que aconteceu na cidade de Foz do Iguaçu no Paraná.
                                 O Elas por Elas foi representado pelos integrantes Gabrielle Aurélio e João Victor Medeiros e acompanhados
                                 pela coordenadora Michelli Galli, foram três dias de apresentações, cujo contou com um estande em que os
@@ -396,7 +415,7 @@ function Eventos() {
                                 participação e ações do Coletivo em eventos dentro e fora do IFPR - Campus Assis Chateaubriand.
                             </p>
                         </div>
-                         {/* Carousel 4 */}
+                        {/* Carousel 4 */}
                         <div className="carousel-container">
                             <button className="arrow prev" onClick={() => plusSlides(-1, 4)}>❮</button>
                             <div className="carousel-slide">
@@ -413,10 +432,10 @@ function Eventos() {
 
                     {/* Add remaining events similarly */}
                     {/* Evento 6 (Maio Furta-cor) - Needs structure */}
-                     <div className="item-evento" data-aos="fade-up">
+                    <div className="item-evento" data-aos="fade-up">
                         <div className="info-evento">
                             <h2>Maio Furta-cor: Saúde Mental Materna</h2>
-                             <div className="evento-meta">
+                            <div className="evento-meta">
                                 <div className="meta-item">
                                     <span>📅</span>
                                     <span>Mês de Maio, 2023</span>
@@ -426,7 +445,7 @@ function Eventos() {
                                     <span>IFPR - Campus Assis Chateaubriand</span>
                                 </div>
                             </div>
-                             <p className="descricao-evento">
+                            <p className="descricao-evento">
                                 No mês de maio, o Coletivo de Mulheres "Elas por Elas" realizou uma ação em alusão ao Maio Furta-cor,
                                 mês dedicado à conscientização sobre a saúde mental materna. Foram distribuídos materiais informativos
                                 e promovidas rodas de conversa para discutir a importância do apoio às mães e desmistificar questões
@@ -434,7 +453,7 @@ function Eventos() {
                             </p>
                         </div>
                         <div className="unicaimagem">
-                             {/* Assuming FOTO9 is the correct image based on original HTML structure near this section */}
+                            {/* Assuming FOTO9 is the correct image based on original HTML structure near this section */}
                             <img src={`${process.env.PUBLIC_URL}/imagem/FOTO9-mês das mulhes.jpg`} alt="Maio Furta-cor" className="single-image" />
                         </div>
                     </div>
@@ -444,8 +463,7 @@ function Eventos() {
 
             {/* Assuming a shared Footer component or replicate footer HTML here */}
             <footer>
-                {/* ... Footer content ... */}
-                 <div className="footer-content">
+                <div className="footer-content">
                     <div className="footer-section about">
                         <h3>Sobre Nós</h3>
                         <p>O Coletivo de Mulheres "Elas por Elas" é dedicado a promover a união, o empoderamento e a saúde mental feminina em Assis Chateaubriand e região.</p>
@@ -471,6 +489,3 @@ function Eventos() {
         </div>
     );
 }
-
-export default Eventos;
-
