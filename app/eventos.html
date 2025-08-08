@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Elas por Elas</title>
+    <link rel="stylesheet" href="styles_evento.css">
+    <link rel="stylesheet" href="styles_menu.css">
+</head>
+<body>
+    <header class="andante">
+        <div class="top-bar">
+            <div class="#">
+            </div>
+            <a href="cadastro.html"><button class="participar" aria-label="Botão para participar do projeto">
+                Receber atualizações 🔔
+            </button></a>
+        </div>
+          <nav aria-label="Navegação principal">
+            <div class="logo">
+                <img src="./imagem/imagem.logoelasporelas.png" alt="Logo Elas por Elas - Projeto de Extensão IFPR">
+            </div>
+             <ul class="menu">
+                <li><a href="/" >Home</a></li>
+                <li><a href="/eventos" class="active">Eventos</a></li>
+                <li><a href="/comunidade">Comunidade</a></li>
+                <li><a href="/pesquisas">Pesquisas</a></li>
+                <li class="dropdown">
+                    <a href="/informacoes" class="dropbtn">Informações</a>
+                    <div class="dropdown-content">
+                        <a href="/informacoes#direitos">Direitos das Mulheres</a>
+                        <a href="/informacoes#saude">Saúde Reprodutiva</a>
+                        <a href="/informacoes#higiene">Higiene e Autocuidado</a>
+                        <a href="/informacoes#rededeapoio">Rede de Apoio</a>
+                        <a href="/informacoes#projetos">Projetos de ajuda e apoio</a>
+                    </div>
+                </li>
+                
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+            <div class="hamburger" aria-label="Menu de navegação" role="button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="mobile-menu" aria-hidden="true">
+               <li><a href="/" class="active">Home</a></li>
+                <li><a href="/eventos">Eventos</a></li>
+                <li><a href="/comunidade">Comunidade</a></li>
+                <li><a href="/pesquisas">Pesquisas</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropbtn" id="informacoesDropdownBtn">Informações <span class="arrow-icon"></span></a>
+                    <div class="dropdown-content">
+                        <a href="/informacoes#direitos">Direitos das Mulheres</a>
+                        <a href="/informacoes#saude">Saúde Reprodutiva</a>
+                        <a href="/informacoes#higiene">Higiene e Autocuidado</a>
+                        <a href="/informacoes#rededeapoio">Rede de Apoio</a>
+                        <a href="/informacoes#projetos">Projetos de ajuda e apoio</a>
+                    </div>
+                </li>
+                <li><a href="/sobre">Sobre</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="eventos">
+            <h1>Nossos Eventos</h1>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Dia das Mulheres: Elas por Elas - 1º Edição</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>26 e 27 de Março, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>IFPR - Campus Assis Chateaubriand</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Em parceria com a Secretaria da Assistência Social e da Mulher, promoveu um evento especial para as mulheres acompanhadas pelo CRAS.💜
+                        O encontro celebrou as conquistas femininas e criou um espaço acolhedor para trocas de histórias e reflexões.
+                        A abertura, conduzida pela Profa.Yohana Saheli, trouxe palavras inspiradoras como força, guerreiras e acolhimento.
+                        O projeto IF'Arte emocionou a todos com música ao vivo.🎶
+                        As estudantes Camila, Fabíola e Heloisa contextualizaram o Dia das Mulheres,
+                        e a Profª Michelli Galli apresentou o histórico do Coletivo Elaspor Elas📖💬.
+                        O evento contou ainda com poesias, cordéis, partilhas emocionantes e debates sobre desafios femininos em carreiras predominantemente masculinas.
+                        No encerramento, a dinâmica das fotos trouxe momentos de auto conexão e empoderamento, onde cada mulher pôde resgatar sua essência e fortalecer sua voz.📷✨
+                        O Dia das Mulheres 'Elas por Elas' nasceu para dar voz às mulheres e quebrar silêncios históricos. Que esse seja apenas o começo! 💪🏻💜
+                    </p>
+                </div>
+                <div class="doiscontainer">
+                    <div class="carousel-container">
+                        <button class="arrow prev" onclick="plusSlides(-1, 0)">❮</button>
+                        <div class="carousel-slide">
+                            <img src="./imagem/FOTO1-mês das mulheres.jpg" alt="Evento26 1" class="active">
+                            <img src="./imagem/FOTO2-mês das mulhes.png" alt="Evento26 2">
+                            <img src="./imagem/FOTO3-mês das mulhes.png" alt="Evento26 3">
+                            <img src="./imagem/FOTO3.1-mês das mulhes.png" alt="Evento26 4">
+                        </div>
+                        <button class="arrow next" onclick="plusSlides(1, 0)">❯</button>
+                        <div class="carousel-controls">
+                            <span class="dot active" onclick="currentSlide(1, 0)"></span>
+                            <span class="dot" onclick="currentSlide(2, 0)"></span>
+                            <span class="dot" onclick="currentSlide(3, 0)"></span>
+                            <span class="dot" onclick="currentSlide(4, 0)"></span>
+                        </div>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="arrow prev" onclick="plusSlides(-1, 1)">❮</button>
+                        <div class="carousel-slide">
+                            <img src="./imagem/FOTO4-mês das mulhes.png" alt="Evento27 1" class="active">
+                            <img src="./imagem/FOTO5-mês das mulhes.png" alt="Evento27 2">
+                            <img src="./imagem/FOTO6-mês das mulhes.png" alt="Evento27 3">
+                            <img src="./imagem/FOTO7-mês das mulhes.png" alt="Evento27 4">
+                        </div>
+                        <button class="arrow next" onclick="plusSlides(1, 1)">❯</button>
+                        <div class="carousel-controls">
+                            <span class="dot active" onclick="currentSlide(1, 1)"></span>
+                            <span class="dot" onclick="currentSlide(2, 1)"></span>
+                            <span class="dot" onclick="currentSlide(3, 1)"></span>
+                            <span class="dot" onclick="currentSlide(4, 1)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Eventos de Setembro</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>10 e 20 de de Setembro, 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Auditório - Prefeitura de Assis</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                       Sendo então no dia 10/09 realizado duas sessões para alunos e servidores,
+                        uma breve apresentação que contextualizou o que o Coletivo é e como ele 
+                        atua dentro e fora da comunidade escolar.
+                        <br>Por fim os integrantes do Coletivo apresentaram no dia 20/09 em um evento realizado pelo IFPR - 
+                        Câmpus Cascavel "V Scientif" no qual Gabrielle Aurélio, Rafaela Ramos e João Medeiros apresentaram 
+                        o trabalho entitulado: "MULHERES NA AGRICULTURA: DESAFIOS PARA A PROFISSIONALIZAÇÃO E A RELAÇÃO COM A
+                        TERRA." E os integrantes Guilherme Coppo, Ana dos Santos e Gabrielly da Rosa apresentaram o trabalho 
+                        entitulado: "A DESCONSTRUÇÃO DE CONCEITOS E DE ESTEREÓTIPOS SOBRE A MULHER NAS CIÊNCIAS EXATAS: UMA
+                        REFLEXÃO SOBRE A MULHER NO CURSO TÉCNICO EM ELETROMECÂNICA INTEGRADO AO ENSINO MÉDIO."
+                    </p>
+                </div>
+                <div class="unicaimagem">
+                    <img src="./imagem/FOTO40-mês das mulhes.png" alt="eventos de Setembro" class="single-image">
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Atividades de Março</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>Mês de Março, 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>IFPR - Campus Assis Chateaubriand</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Coletivo de Mulheres Elas por Elas, no mês de março em alusão ao dia internacional
+                        da mulher e por ser um mês voltado há várias lutas femininas, realizou e participou
+                        de algumas atividades, confira abaixo 👇
+                        <br>• Realizou juntamente com o Grêmio Estudantil IFormação a entrega de lembrança para as
+                        servidoras do IFPR;
+                        <br>• Realizou o Dia Internacional da Mulher: Intervalo Cultural no IFPR;
+                        <br>• Participou do III Encontro "Mulher Empoderada", promovido pela Secretaria da Mulher
+                        de Assis Chateaubriand;
+                        <br>• Participou da palestra sobre o tema “Cidadania Feminina” promovido pela APP-Sindicato.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 2)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO37-mês das mulhes.png" alt=" eventos de março 1" class="active">
+                        <img src="./imagem/FOTO38-mês das mulhes.png" alt=" eventos de março 2" >
+                        <img src="./imagem/FOTO39-mês das mulhes.png" alt=" eventos de março 3" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 2)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 2)"></span>
+                        <span class="dot" onclick="currentSlide(2, 2)"></span>
+                        <span class="dot" onclick="currentSlide(3, 2)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>X FEPIAC: Feira de Ensino, Extensão, Pesquisa e Inovação</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>24 á 26 de outubro, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>IFPR - Campus Assis Chateaubriand</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Nessa semana aconteceu a IX FEPIAC Feira de Ensino,
+                        Extensão, Pesquisa e Inovação do IFPR Assis Chateaubriand e o IV SEPE Seminário
+                        de Pesquisa e Extensão no qual o Coletivo de Mulheres 'Elas por Elas' participou.
+                        Sendo no IV SEPE foi apresentado pelas coordenadoras Celina Gomes e Michelli Galli
+                        o projeto "Coletivo de Mulheres 'Elas por Elas': respeito, autonomia e empoderamento
+                        da mulher na escola e na comunidade" e na IX FEPIAC os integrantes do projeto Gabrielle
+                        Aurélio, Gabrielly da Rosa, Guilherme Coppo e João Victor Medeiros apresentaram na feira
+                        abordando temas como "Mulheres do setor agropecuário: enfrentando desafios, quebrando
+                        estereótipos e alcançando vitórias profissionais" e "Quebrando barreiras: a mulher na
+                        área de eletromecânica e no mercado de trabalho".
+                        Todos as apresentações/pesquisas foram integradas ao Elas por Elas, e contaram com o
+                        auxílio das coordenadoras para a submissão dos trabalhos.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 3)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO30-mês das mulhes.png" alt=" IX FEPIAC1" class="active">
+                        <img src="./imagem/FOTO31-mês das mulhes.png" alt=" IX FEPIAC2" >
+                        <img src="./imagem/FOTO32-mês das mulhes.png" alt=" IX FEPIAC3" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 3)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 3)"></span>
+                        <span class="dot" onclick="currentSlide(2, 3)"></span>
+                        <span class="dot" onclick="currentSlide(3, 3)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>FIciências 2023: XII Feira de Inovação das Ciências e Engenharias</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>16 á 20 de outubro, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Foz do Iguaçu</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        o Coletivo de Mulheres participou do Ficiências que aconteceu na cidade de Foz do Iguaçu no Paraná.
+                        O Elas por Elas foi representado pelos integrantes Gabrielle Aurélio e João Victor Medeiros e acompanhados
+                        pela coordenadora Michelli Galli, foram três dias de apresentações, cujo contou com um estande em que os
+                        integrantes decoraram, e aos visitantes foram entregues adesivos do Coletivo, sendo um meio de divulgação
+                        do projeto, além das redes sociais. Este evento contou com avaliadores de universidades e da Itaipu Binacional,
+                        a apresentação do projeto por meio dos integrantes foi prestigiada com diversos elogios e sugestões para a
+                        participação e ações do Coletivo em eventos dentro e fora do IFPR - Campus Assis Chateaubriand.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 4)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO28-mês das mulhes.png" alt=" FIciências2023 1" class="active">
+                        <img src="./imagem/FOTO29-mês das mulhes.png" alt=" FIciências2023 2" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 4)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 4)"></span>
+                        <span class="dot" onclick="currentSlide(2, 4)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Palestra: Em defesa do respeito e da valorização das mulheres</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>27 de Julho, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>IFPR - Campus Assis Chateaubriand</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Promovido pelo Coletivo de Mulheres em parceria com o IFPR Câmpus Assis Chateaubriand e a Adv. Jaqueline Serrute,
+                        ocorreu a palestra de abertura do Agosto Lilás, com o tema: "Em defesa do respeito e da valorização das mulheres".
+                        Foi realizado duas sessões de palestra, no qual a primeira teve como público os alunos formandos e a segunda aberta
+                        aos alunos e professores em geral. Estiveram presentes o Diretor Geral Vicente Sandeski e o Diretor de Ensino Alex Mussi,
+                        o qual os mesmos em momento breve agradeceram a presença de todos!
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 5)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO24-mês das mulhes.png" alt=" palestra 1" class="active">
+                        <img src="./imagem/FOTO25-mês das mulhes.png" alt=" palestra 2" >
+                        <img src="./imagem/FOTO26-mês das mulhes.png" alt=" palestra 3" >
+                        <img src="./imagem/FOTO27-mês das mulhes.png" alt=" palestra 4" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 5)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 5)"></span>
+                        <span class="dot" onclick="currentSlide(2, 5)"></span>
+                        <span class="dot" onclick="currentSlide(3, 5)"></span>
+                        <span class="dot" onclick="currentSlide(4, 5)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>75° Reunião Anual da Sociedade Brasileira para o Progresso da Ciência</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>25 de Julho, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>UFPR (Unuversidade Federal do Paraná)</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        o Coletivo de Mulheres 'Elas por Elas' esteve participando do maior evento da América Latina,
+                        a 75° Reunião Anual da Sociedade Brasileira para o Progresso da Ciência (SBPC), no estande da
+                        Ciência Menina foi realizado uma roda de conversa, o qual a mesma foi dirigida pela coordenadora
+                        Celina Gomes e os integrantes João Medeiros, Rafaela Ramos e Gabrielle Aurélio.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 6)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO21-mês das mulhes.png" alt=" maior evento 1" class="active">
+                        <img src="./imagem/FOTO22-mês das mulhes.png" alt=" maior evento 2" >
+                        <img src="./imagem/FOTO23-mês das mulhes.png" alt=" maior evento 3" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 6)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 6)"></span>
+                        <span class="dot" onclick="currentSlide(2, 6)"></span>
+                        <span class="dot" onclick="currentSlide(3, 6)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Participação: primeira carreata do meio-dia</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>?? de Julho, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Município de Assis Chateaubriand</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        O Coletivo de Mulheres 'Elas por Elas' esteve ativamente presente na 1ª Carreata do Meio-Dia em Assis Chateaubriand,
+                        reforçando seu compromisso com a causa "Pela vida e pelo fim da violência contra as Mulheres". Mais uma vez em parceria
+                        com a prefeitura, o coletivo demonstrou união e engajamento em prol da causa.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 7)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO19-mês das mulhes.png" alt="primeira carreata 1" class="active">
+                        <img src="./imagem/FOTO20-mês das mulhes.png" alt="primeira carreata 2" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 7)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 7)"></span>
+                        <span class="dot" onclick="currentSlide(2, 7)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Caravana Paraná - Unido pelas Mulheres</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>15 de Junho, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Centro Universitário FAG (Fundação Assis Gurgacz)</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        O Coletivo de Mulheres esteve presente na "Caravana Paraná - Unido pelas Mulheres", 
+                        evento que ocorreu no Centro Universitário FAG (Fundação Assis Gurgacz) de Cascavel,
+                        o integrante João Medeiros esteve presente representando o 'Elas por Elas'.
+                        Organização/Palestrante do evento foi a Secretária de Estado da Mulher, Igualdade
+                        Racial e Pessoa Idosa Leandre Dal Ponte.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 8)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO16-mês das mulhes.png" alt="Caravana Paraná 1" class="active">
+                        <img src="./imagem/FOTO17-mês das mulhes.png" alt="Caravana Paraná 2" >
+                        <img src="./imagem/FOTO18-mês das mulhes.png" alt="Caravana Paraná 3" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 8)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 8)"></span>
+                        <span class="dot" onclick="currentSlide(2, 8)"></span>
+                        <span class="dot" onclick="currentSlide(3, 8)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Coletivo 'Elas por Elas': As vozes das mulheres silenciadas</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>?? de Maio, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>IFPR - Câmpus Telêmaco Borba</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Coletivo de Mulheres presente no VIII SE²PIN que foi realizado no IFPR - 
+                        Câmpus Telêmaco Borba, com sessão temática: "Coletivo 'Elas por Elas': As
+                        vozes das mulheres silenciadas."A sessão foi conduzida pela coordenadora 
+                        Michelli Galli e contou com a participação da integrante Gabrielle Aurélio.
+                        Foi realizado uma roda de conversa, no qual teve maior introdução sobre a 
+                        violência contra a mulher. Em um momento de interação foi pedido para os
+                        participantes relatarem em um papel, quais foram as vivências com a violência,
+                        tanto no ambiente escolar, quanto em outras situações da vida.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 9)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO14-mês das mulhes.png" alt="VIII SE²PIN 1" class="active">
+                        <img src="./imagem/FOTO15-mês das mulhes.png" alt="VIII SE²PIN 2" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 9)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 9)"></span>
+                        <span class="dot" onclick="currentSlide(2, 9)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Café com as Mães: de Mulher para Mulher</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>29 de Maio, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Auditório - Prefeitura de Assis</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Café com as Mães: de Mulher para Mulher – Um bate-papo sobre violência doméstica’, 
+                        com a advogada Jaqueline Serrute. O objetivo da ação, voltada para as mães dos/das
+                        estudantes, alunas do período noturno e para as servidoras, foi o de realizar uma 
+                        reflexão acerca da importância da preservação da integridade física e psicológica 
+                        da mulher, elucidando as participantes sobre o conceito e os tipos de violência
+                        ontra a mulher, bem como sobre os procedimentos de detecção e de denúncia. Após
+                        a discussão, da qual muitas participantes tomaram parte relatando suas experiências, 
+                        foi servido um lanche, a fim de concluir o evento de modo celebrativo.
+                    </p>
+                </div>
+                <div class="carousel-container">
+                    <button class="arrow prev" onclick="plusSlides(-1, 10)">❮</button>
+                    <div class="carousel-slide">
+                        <img src="./imagem/FOTO10-mês das mulhes.png" alt="Mulher para mulher 1" class="active">
+                        <img src="./imagem/FOTO11-mês das mulhes.png" alt="Mulher para mulher 2" >
+                        <img src="./imagem/FOTO12-mês das mulhes.png" alt="Mulher para mulher 3" >
+                        <img src="./imagem/FOTO13-mês das mulhes.png" alt="Mulher para mulher 4" >
+                    </div>
+                    <button class="arrow next" onclick="plusSlides(1, 10)">❯</button>
+                    <div class="carousel-controls">
+                        <span class="dot active" onclick="currentSlide(1, 10)"></span>
+                        <span class="dot" onclick="currentSlide(2, 10)"></span>
+                        <span class="dot" onclick="currentSlide(3, 10)"></span>
+                        <span class="dot" onclick="currentSlide(4, 10)"></span>
+                    </div>
+                </div>
+            </div>
+
+           <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Palestra sobre imagem pessoal e autonomia feminina</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>06 de Maio, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Pastoral da Criança</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        O Coletivo de Mulheres esteve atuando na Pastoral da Criança, com uma palestra sobre imagem pessoal e autonomia feminina.
+                        R'afaela Ramos foi a integrante que conduziu a palestra juntamente com a coordenadora Celina Gomes.
+                    </p>
+                </div>
+                <div class="unicaimagem">
+                    <img src="./imagem/FOTO9-mês das mulhes.jpg" alt="Maio Furta-cor" class="single-image">
+                </div>
+            </div>
+
+                     <div class="item-evento" data-aos="fade-up">
+                <div class="info-evento">
+                    <h2>Participação na aprovação da lei municipal: Maio Furta-cor</h2>
+                    <div class="evento-meta">
+                        <div class="meta-item">
+                            <span>📅</span>
+                            <span>?? de Maio, 2023</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>📍</span>
+                            <span>Auditório - Prefeitura de Assis</span>
+                        </div>
+                    </div>
+                    <p class="descricao-evento">
+                        Participação do Coletivo de Mulheres “Elas por Elas” na sessão de aprovação da lei municipal que institui o “Maio Furta-cor /
+                        Mês pela Visibilidade da Saúde Mental Materna”, iniciativa do Grupo “Roda do Despertar” junto à Câmara Municipal de Assis Chateaubriand.
+                    </p>
+                </div>
+                <div class="unicaimagem">
+                    <img src="./imagem/FOTO8-mês das mulhes.png" alt="Maio Furta-cor" class="single-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre Nós</h3>
+                <p>O Coletivo de Mulheres "Elas por Elas" é dedicado a promover a união,
+                    o empoderamento e a saúde mental feminina em Assis Chateaubriand e região.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Assis Chateaubriand, PR - Brasil</p>
+                <p><i class="fas fa-envelope"></i> coletivodemulheresifpr@gmail.com</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/elasporelas_ifpr/">
+                        <img src="./imagem/image-insta.png" alt="">@elasporelas_ifpr
+                    </a>
+                    
+                    <a href="https://www.facebook.com/profile.php?id=100093049331240">
+                        <img src="./imagem/image-face.png" alt="">Coletivo de Mulheres 'elas por elas'
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Elas por Elas. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="script_eventos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
