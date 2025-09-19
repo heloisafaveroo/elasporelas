@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://elasporelas-ifpr.netlify.app/sitemap.xml
